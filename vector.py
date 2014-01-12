@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+
 from __future__ import print_function
-from math import sqrt
+from math import sqrt, cos, sin, fabs
 
 
 class Vector(object):
@@ -99,9 +101,11 @@ if __name__ == "__main__":
     import numpy as np
     from pprint import pprint as pp
 
+    x, y, z = (4, 2, 7)
+
     print("magnitude")
-    a = np.array([4, 2, 7])
-    b = Vector(4, 2, 7)
+    a = np.array([x, y, z])
+    b = Vector(x, y, z)
     n = np.sqrt(a.dot(a))
     u = b.magnitude
     print("np: %s" % n)
@@ -119,3 +123,5 @@ if __name__ == "__main__":
     assert round(n[1]) == round(b.y)
     assert round(n[2]) == round(b.z)
     print("OK\n")
+
+
