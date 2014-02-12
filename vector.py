@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
-from math import sqrt, cos, sin, fabs
+from math import sqrt
 
 
 class Vector(object):
+    """
+    A pure python vector class.
+    """
     def __init__(self, x=float(0), y=float(0), z=float(0), tolerance=0.0001):
         self.x = float(x)
         self.y = float(y)
@@ -97,9 +100,9 @@ class Vector(object):
 
 
 if __name__ == "__main__":
-    import math
+    # Here I use Numpy to ensure my class behaves mathematically correctly
+
     import numpy as np
-    from pprint import pprint as pp
 
     x, y, z = (4, 2, 7)
 
@@ -108,15 +111,17 @@ if __name__ == "__main__":
     b = Vector(x, y, z)
     n = np.sqrt(a.dot(a))
     u = b.magnitude
+
     print("np: %s" % n)
     print("us: %s\t-> " % u, end='')
     assert round(n) == round(u)
     print("OK\n")
+
     print("normalize")
     n = a / np.linalg.norm(a)
     b.normalize()
-    text = "np\t\t\tus:\nx={0:8f}\tx={1:8f}\ny={2:8f}\ty={3:8f}\nz={4:8f}\tz={5:8f}".format(n[0], b.x, n[1], b.y, n[2],
-                                                                                            b.z)
+    text = "np\tx={0:8f}\ty={1:8f}\tz={2:8f}\nus:\tx={3:8f}\ty={4:8f}\tz={5:8f}".format(n[0], n[1], n[2],
+                                                                                            b.x, b.y, b.z)
     print(text, end='')
     print("\t  -> ", end='')
     assert round(n[0]) == round(b.x)
