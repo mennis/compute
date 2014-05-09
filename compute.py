@@ -88,31 +88,3 @@ def standard_dev(v):
     :return: the variance of a list of values expressed as a float
     """
     return math.sqrt(variance(v))
-
-
-if __name__ == "__main__":
-    # use numpy to make sure my math is correct
-    import numpy as np
-    from pprint import pprint as pp
-
-    known = [{'bw': 2029.6, 'io': 458152.0, 'iops': 16236.0, 'runt': 226039.0},
-        {'bw': 2046.8, 'io': 458252.0, 'iops': 16374.0, 'runt': 224134.0},
-        {'bw': 2019.5, 'io': 458352.0, 'iops': 16155.0, 'runt': 227173.0},
-        {'bw': 2005.4, 'io': 458452.0, 'iops': 16042.0, 'runt': 228762.0}]
-
-    pp(known)
-    pp(getfrom(known, field='iops'))
-    allf = [("std", np.std, standard_dev), ("var", np.var, variance), ("med", np.median, median),
-            ("avg", np.average, average)]
-
-    for stat in ['io', 'iops', 'runt', 'bw']:
-        print("%s\n%s" % (stat, "=" * len(stat)))
-        for funcs in allf:
-            n = funcs[1](getfrom(known, field=stat))
-            i = funcs[2](known, field=stat)
-
-            print("np %s  : %s " % (funcs[0], n))
-            print("us %s : %s   -> " % (funcs[0], i), end='')
-            assert round(n) == round(i)
-            print("OK\n")
-        print("\n")

@@ -44,6 +44,9 @@ class Vector(object):
                 setattr(self, c, 0.0)
 
     def reverse(self):
+        """
+        reverse the vector by applying the negative of each component x, y, z
+        """
         self.x = -self.x
         self.y = -self.y
         self.z = -self.z
@@ -97,36 +100,3 @@ class Vector(object):
         for c in ['x', 'y', 'z']:
             r += "%s = %s\n" % (c, getattr(self, c))
         return r
-
-
-if __name__ == "__main__":
-    # Here I use Numpy to ensure my class behaves mathematically correctly
-
-    import numpy as np
-
-    x, y, z = (4, 2, 7)
-
-    print("magnitude")
-    a = np.array([x, y, z])
-    b = Vector(x, y, z)
-    n = np.sqrt(a.dot(a))
-    u = b.magnitude
-
-    print("np: %s" % n)
-    print("us: %s\t-> " % u, end='')
-    assert round(n) == round(u)
-    print("OK\n")
-
-    print("normalize")
-    n = a / np.linalg.norm(a)
-    b.normalize()
-    text = "np\tx={0:8f}\ty={1:8f}\tz={2:8f}\nus:\tx={3:8f}\ty={4:8f}\tz={5:8f}".format(n[0], n[1], n[2],
-                                                                                            b.x, b.y, b.z)
-    print(text, end='')
-    print("\t  -> ", end='')
-    assert round(n[0]) == round(b.x)
-    assert round(n[1]) == round(b.y)
-    assert round(n[2]) == round(b.z)
-    print("OK\n")
-
-
