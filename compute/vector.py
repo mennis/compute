@@ -8,6 +8,7 @@ class Vector(object):
     """
     A pure python vector class.
     """
+
     def __init__(self, x=float(0), y=float(0), z=float(0), tolerance=0.0001):
         self.x = float(x)
         self.y = float(y)
@@ -54,18 +55,22 @@ class Vector(object):
     def __iadd__(self, other):
         for c in ['x', 'y', 'z']:
             setattr(self, c, getattr(self, c) + getattr(other, c))
+        return self
 
     def __isub__(self, other):
         for c in ['x', 'y', 'z']:
-            setattr(self, c, getattr(self, c) + getattr(other, c))
+            setattr(self, c, getattr(self, c) - getattr(other, c))
+        return self
 
     def __imul__(self, other):
         for c in ['x', 'y', 'z']:
             setattr(self, c, getattr(self, c) * getattr(other, c))
+        return self
 
     def __idiv__(self, other):
         for c in ['x', 'y', 'z']:
             setattr(self, c, getattr(self, c) / getattr(other, c))
+        return self
 
     def __neg__(self):
         return Vector(-self.x, -self.y, -self.z)

@@ -7,4 +7,4 @@ The Vector class based on the math in the Appendix A of:
 Bourg and Bywalec, Physics for Game Developers, 2nd edition, O'Reilly and Associates, 2013, 978-1449392512
 There is on going work for the mass related classes.
 
-![status](https://travis-ci.org/mennis/compute.svg?branch=master) Testing courtesy of [TravisCI](https://travis-ci.org/ "Travis-CI.org)
+![status](https://travis-ci.org/mennis/compute.svg?branch=master) Testing courtesy of [TravisCI](https://travis-ci.org/ "Travis-CI.org")

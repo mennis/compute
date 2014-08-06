@@ -2,7 +2,7 @@ import unittest
 import random
 import numpy as np
 
-from compute import average, median, standard_dev, variance
+from compute.statistics import average, median, standard_dev, variance
 
 
 class TestCompute(unittest.TestCase):
