@@ -2,5 +2,5 @@
 # You do not need e.g. Sphinx or Numpy just to use this library.
 
 numpy
-sphinx
+# sphinx
 
