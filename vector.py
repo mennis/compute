@@ -17,7 +17,7 @@ class Vector(object):
     @property
     def magnitude(self):
         """
-        Returns the vector magnitude or 'length'
+        return the vector magnitude or 'length'
 
             $|x| = \sqrt{x^2 + y^2 + z^2}$
 
@@ -26,7 +26,7 @@ class Vector(object):
 
     def normalize(self):
         """
-        Converts the vector into a unit vector whose magnitude is 1
+        converts the vector into a unit vector whose magnitude is 1
 
             $|x| = \sqrt{x^2 + y^2 + z^2} = 1$
 
@@ -78,7 +78,7 @@ class Vector(object):
 
     def __xor__(self, other):
         """
-        Returns the cross product of self and other
+        return the cross product of self and other
         """
         return Vector(
             self.y * other.x - self.z * other.y,
@@ -88,7 +88,7 @@ class Vector(object):
 
     def __mul__(self, other):
         """
-        Returns the dot product (or scalar mult if other is not a Vector) of self and other
+        return the dot product (or scalar mult if other is not a Vector) of self and other
         """
         if type(other) is not Vector:
             return Vector(self.x * other + self.y * other + self.z * other)
