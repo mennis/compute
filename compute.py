@@ -79,7 +79,7 @@ def variance(v):
     :param v: a list of numerical values
     :return: the variance of a list of values expressed as a float
     """
-    return average(map(lambda x: (x - average(v)) ** 2, v))
+    return average([(x - average(v)) ** 2 for x in v])
 
 
 @filter_for

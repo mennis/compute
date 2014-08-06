@@ -23,13 +23,13 @@ class TestCompute(unittest.TestCase):
         self.s = s
 
     def test_standard_deviation(self):
-        self.assertAlmostEquals(standard_dev(self.s), np.std(self.s),places=6)
+        self.assertAlmostEquals(standard_dev(self.s), np.std(self.s), places=6)
 
     def test_variance(self):
-        self.assertAlmostEquals(variance(self.s), np.var(self.s),places=6)
+        self.assertAlmostEquals(variance(self.s), np.var(self.s), places=6)
 
     def test_median(self):
-        self.assertAlmostEquals(median(self.s), np.median(self.s),places=6)
+        self.assertAlmostEquals(median(self.s), np.median(self.s), places=6)
 
     def test_average(self):
         self.assertAlmostEqual(average(self.s), np.average(self.s), places=6)
