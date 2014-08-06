@@ -39,6 +39,7 @@ def filter_for(function):
 
     return wrapper
 
+
 @filter_for
 def getfrom(v):
     """
@@ -55,7 +56,7 @@ def median(v):
     :return: statistical median for a list of values expressed as a float
     """
     v.sort()
-    m = len(v) / 2
+    m = int(len(v) / 2)
 
     if not len(v) % 2:  # not even
         return (v[m - 1] + v[m]) / 2.0  # average the middle two
