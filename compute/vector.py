@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 from math import sqrt
-
+from sys import version
 
 class Vector(object):
     """
@@ -105,3 +105,8 @@ class Vector(object):
         for c in ['x', 'y', 'z']:
             r += "%s = %s\n" % (c, getattr(self, c))
         return r
+
+    def __itruediv__(self, other):
+        for c in ['x', 'y', 'z']:
+            setattr(self, c, getattr(self, c) / getattr(other, c))
+        return self
