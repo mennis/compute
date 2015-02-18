@@ -6,7 +6,7 @@ from compute.vector import Vector
 
 class TestCompute(unittest.TestCase):
     """
-    Here we use numpy to check our math.
+    Here we compare our math to numpy as a sanity check.
     """
 
     def setUp(self):

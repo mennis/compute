@@ -2,7 +2,7 @@
 
 from __future__ import print_function
 from math import sqrt
-from sys import version
+
 
 class Vector(object):
     """
@@ -27,7 +27,7 @@ class Vector(object):
 
     def normalize(self):
         """
-        converts the vector into a unit vector whose magnitude is 1
+        convert the vector into a unit vector whose magnitude is 1
 
             $|x| = \sqrt{x^2 + y^2 + z^2} = 1$
 

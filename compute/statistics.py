@@ -10,7 +10,7 @@ import functools
 
 def filter_for(function):
     """
-    A decorator for slicing data from a list of dicitonaries.
+    A decorator for slicing data from a list of dictionaries.
     If the wrapped function is called with::
 
         field=<some key>
