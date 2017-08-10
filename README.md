@@ -1,4 +1,4 @@
-#Compute
+# Compute
 Some pure python Math and Physics tools. This module does not use numpy or any external libraries.  Some of the tests 
 use numpy for validation of the computation but the modules will remain pure python.  
 
