@@ -115,7 +115,6 @@ class TestCompute(unittest.TestCase):
         self.assertEqual(nV[1], cV.y)
         self.assertEqual(nV[2], cV.z)
 
-
     def test_idiv(self):
         x1 = random.randint(-1000, 50000)
         y1 = random.randint(-1000, 50000)
