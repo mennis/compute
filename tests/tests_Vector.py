@@ -23,7 +23,7 @@ class TestCompute(unittest.TestCase):
         nV = np.array([x, y, z])
         cV = Vector(x, y, z)
 
-        self.assertEquals(np.sqrt(nV.dot(nV)), cV.magnitude)
+        self.assertEqual(np.sqrt(nV.dot(nV)), cV.magnitude)
 
     def test_normalize(self):
         x = random.randint(-1000, 50000)
